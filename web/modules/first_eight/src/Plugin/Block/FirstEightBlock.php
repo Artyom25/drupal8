@@ -42,4 +42,11 @@ class FirstEightBlock extends BlockBase implements BlockPluginInterface{
     );
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state) {
+    $this->configuration['name'] = $form_state->getValue('first_eight_block_name');
+  }
+
 }
