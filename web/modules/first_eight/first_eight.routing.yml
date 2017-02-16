@@ -1,0 +1,7 @@
+first_eight.content:
+  path: '/hello'
+  defaults:
+    _controller: 'Drupal\first_eight\Controller\FirstEightController::content'
+    _title: 'Hello Woldr'
+  requirements:
+    _permission: 'access content'
