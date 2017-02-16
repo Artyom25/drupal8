@@ -37,8 +37,20 @@ class FirstEightBlock extends BlockBase implements BlockPluginInterface{
    * {@inheritdoc}
    */
   public function build() {
+    $config = $this->getConfiguration();
+
+    if (!empty($config['name'])) {
+      $name = $config['name'];
+    }
+    else {
+      $name = $this->t('two no one');
+    }
+
     return array(
-      '#markup' => $this->t('Hello wolrd from block'),
+      '#markup' => $this->t('Hello @name from block', array(
+          '@name' => $name,
+        )
+      ),
     );
   }
 
