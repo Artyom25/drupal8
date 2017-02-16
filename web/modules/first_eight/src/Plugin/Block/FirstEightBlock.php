@@ -61,4 +61,15 @@ class FirstEightBlock extends BlockBase implements BlockPluginInterface{
     $this->configuration['name'] = $form_state->getValue('first_eight_block_name');
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration() {
+    $default_config = \Drupal::config('first_eight.settings');
+
+    return array(
+      'name' => $default_config->get('first_eight.name'),
+    );
+  }
+
 }
