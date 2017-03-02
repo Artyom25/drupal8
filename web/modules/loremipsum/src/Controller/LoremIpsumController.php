@@ -53,5 +53,4 @@ class LoremIpsumController {
       return $element;
     }
   }
-
 }
