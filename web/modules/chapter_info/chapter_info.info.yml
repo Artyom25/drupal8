@@ -1,0 +1,5 @@
+name: Chapter information
+type: module
+description: 'Defines chapter information field type based on schema org Chapter https://bib.schema.org/Chapter'
+package: Custom Fields
+core: 8.x

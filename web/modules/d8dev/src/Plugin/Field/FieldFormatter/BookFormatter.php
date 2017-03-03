@@ -30,22 +30,13 @@ use Drupal\Core\Field\FieldItemListInterface;
  */
 class BookFormatter extends FormatterBase {
 
-  /**
-   * Simple helper function to get greatest common denominator(gcd) of minutes.
-   */
-  function gcd($a, $b) {
-    $b = ($a == 0) ? 0 : $b;
-
-    return ($a % $b) ? $this->gcd($b, abs($a - $b)) : $b;
-  }
-
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
 
     foreach ($items as $delta => $item) {
       $hours = floor($item->value / 60);
       $minutes = $item->value % 60;
-      $minutes_gcd = $this->gcd($minutes, 60);
+      $minutes_gcd = 25;
       $minutes_fraction = $minutes / $minutes_gcd . "/" . 60 / $minutes_gcd;
 
       if ($hours > 0) {

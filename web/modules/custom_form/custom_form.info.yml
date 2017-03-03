@@ -1,0 +1,5 @@
+name: Custom form
+type: module
+description: 'Implementation of custom form created programmatically'
+package: Custom
+core: 8.x
