@@ -39,6 +39,11 @@ class CustomFormForm extends FormBase {
     $form['description'] = [
       '#type' => 'textarea',
       '#title' => t('Description'),
+      '#states' => [
+        'disabled' => [
+          ':input[name="develop"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
     $form['destiny'] = [
       '#type' => 'select',
@@ -51,6 +56,11 @@ class CustomFormForm extends FormBase {
         'forth' => 'Forth val',
       ],
       '#default_value' => '0',
+      '#states' => [
+        'visible' => [
+          ':input[name="develop"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
     $form['submit'] = [
       '#type' => 'submit',
