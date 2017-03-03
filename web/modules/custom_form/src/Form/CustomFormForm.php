@@ -31,6 +31,7 @@ class CustomFormForm extends FormBase {
     $form['video'] = [
       '#type' => 'textfield',
       '#title' => t('YouTube video'),
+      '#required' => TRUE,
     ];
     $form['develop'] = [
       '#type' => 'checkbox',
