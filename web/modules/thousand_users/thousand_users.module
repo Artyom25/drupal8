@@ -46,7 +46,12 @@ function createUserBatch($acc, &$context) {
  */
 function batchFinished($success, $results, $operations) {
   if ($success) {
-    drupal_set_message(\Drupal::translation()->formatPlural(count($results), 'User created.', '@count user created.'));
+    drupal_set_message(\Drupal::translation()->formatPlural(count($results), 'User created.', '@count users created.'));
+    $list = [
+      '#theme' => 'item_list',
+      '#items' => $results,
+    ];
+    drupal_set_message(\Drupal::service('renderer')->render($list));
   }
   else {
     drupal_set_message('An error occured');
