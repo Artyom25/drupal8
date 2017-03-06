@@ -1,0 +1,28 @@
+thousand_users.create_node:
+  path: '/thousand_users_node'
+  defaults:
+    _controller: 'Drupal\thousand_users\Controller\ThousandUsersNodeController::content'
+    _title: 'Thousand Users node creation'
+  requirements:
+    _permission: 'access content'
+thousand_users.create_user:
+  path: '/thousand_users_user'
+  defaults:
+    _controller: 'Drupal\thousand_users\Controller\ThousandUsersUserController::content'
+    _title: 'Thousand Users user creation'
+  requirements:
+    _permission: 'access content'
+thousand_users.form:
+  path: '/thousand_users_form'
+  defaults:
+    _form: 'Drupal\thousand_users\Form\ThousandUsersForm'
+    _title: 'Thousand Users form'
+  requirements:
+    _permission: 'access content'
+thousand_users.file_upload:
+  path: '/thousand_users_file'
+  defaults:
+    _form: 'Drupal\thousand_users\Form\FileUploadTestForm'
+    _title: 'Thousand Users file upload'
+  requirements:
+    _permission: 'access content'
