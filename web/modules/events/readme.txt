@@ -7,3 +7,6 @@ tasks
     tasks list, future tasks, single task, tasks tags
 blog(diary)
     simple ct with textarea, title
+
+
+actually I need events and tasks. events will be on calendar marked by one color(it will be changable), and tasks will be marked by another way.
