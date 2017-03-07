@@ -1,0 +1,6 @@
+{
+  "name": "drupal/first_eight",
+  "description": "This is my first module on drupal 8",
+  "type": "drupal-module",
+  "licence": "GPL-2.0+"
+}

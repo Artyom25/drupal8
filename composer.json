@@ -21,7 +21,14 @@
         "cweagans/composer-patches": "~1.0",
         "drupal/core": "~8.0",
         "drush/drush": "~8.0",
-        "drupal/console": "~1.0"
+        "drupal/console": "~1.0",
+        "drupal/ctools": "3.x-dev",
+        "drupal/admin_toolbar": "^1.18",
+        "drupal/devel": "1.x-dev",
+        "drupal/module_filter": "^3.0",
+        "drupal/page_manager": "1.x-dev",
+        "drupal/layout_plugin": "1.x-dev",
+        "drupal/panels": "3.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",

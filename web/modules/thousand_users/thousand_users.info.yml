@@ -1,0 +1,6 @@
+name: Thousand users
+description: module to create 1000 users, using batch
+package: custom
+
+type: module
+core: 8.x

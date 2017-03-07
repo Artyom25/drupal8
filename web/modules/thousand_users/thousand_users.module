@@ -1,0 +1,60 @@
+<?php
+/**
+ * @file
+ * Thousand users module
+ */
+
+/**
+ * Function to init and proceed batch.
+ */
+function thousand_user_batch_init($file_uri) {
+  $operations = array();
+  $fileparse = new Drupal\thousand_users\Controller\ThousandUsersUserController();
+  $lines = $fileparse->fileParse($file_uri);
+  foreach ($lines as $line) {
+    $operations[] = ['createUserBatch', [$line]];
+  }
+
+  $batch = [
+    'title' => t('Creating users, general.'),
+    'operations' => $operations,
+    'finished' => 'batchFinished',
+    'init_message' => t('Large csv batch is starting now!'),
+    'progress_message' => t('Processed @current of @total'),
+    'error_message' => t('An error occurred.'),
+  ];
+  batch_set($batch);
+}
+
+/**
+ * Batch process function.
+ */
+function createUserBatch($acc, &$context) {
+  $name = $acc[0];
+  $email = $acc[1];
+  $pass = $acc[2];
+  $new_user = new Drupal\thousand_users\Controller\ThousandUsersUserController();
+  $unique_name = $new_user->checkUserName($name);
+  $uid = $new_user->createUser($unique_name, $email, $pass);
+
+  $new_name = Drupal\user\Entity\User::load($uid)->getUsername();
+  $context['results'][] = $new_name;
+  $context['message'] = 'User <em>' . $new_name . '</em> created';
+}
+
+/**
+ * Batch finish function.
+ */
+function batchFinished($success, $results, $operations) {
+  if ($success) {
+    drupal_set_message(\Drupal::translation()->formatPlural(count($results), 'User created.', '@count users created.'));
+    $list = [
+      '#theme' => 'item_list',
+      '#items' => $results,
+    ];
+    drupal_set_message(\Drupal::service('renderer')->render($list));
+  }
+  else {
+    drupal_set_message('An error occured');
+  }
+}
