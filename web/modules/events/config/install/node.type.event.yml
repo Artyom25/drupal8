@@ -1,0 +1,13 @@
+type: event
+name: Event
+description: 'Use <em>event</em> content to show it on calendar events list'
+help: 'it is preversion of this ct. maybe it becomes more than one ct, we will see'
+new_revision: false
+display_submitted: true
+preview_mode: 1
+status: true
+langcode: en
+dependencies:
+  enforced:
+    module:
+      - events
