@@ -1,0 +1,6 @@
+name: Multistep form module
+description: Module to create multistep form
+package: custom form
+
+type: module
+core: 8.x

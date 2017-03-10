@@ -1,0 +1,6 @@
+multistep.multistep:
+  title: 'Multistep'
+  description: 'Link to multistep form'
+  parent: main
+  menu_name: main
+  route_name: multistep.form-one

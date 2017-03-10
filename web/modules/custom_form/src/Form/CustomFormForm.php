@@ -9,6 +9,8 @@ namespace Drupal\custom_form\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
 
 class CustomFormForm extends FormBase {
 
@@ -23,6 +25,10 @@ class CustomFormForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $form['replaceable'] = array(
+      '#type' => 'markup',
+      '#markup' => '<div id="hey"></div>'
+    );
     $form['title'] = [
       '#type' => 'textfield',
       '#title' => t('Some ordinary title'),
@@ -66,19 +72,35 @@ class CustomFormForm extends FormBase {
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => t('Lets go!'),
+      '#ajax' => array(
+        'callback' => array($this, 'addMoreCallback'),
+      ),
     ];
-
     return $form;
+  }
+
+  public function addMoreCallback(array &$form, FormStateInterface $form_state) {
+    $dev = $form_state->getValue('develop');
+    $message = '<div id="hey">values:<br/>';
+    $message .= 'title: ' . $form_state->getCompleteForm()['title']['#value'] . '<br/>';
+    $message .= 'video: ' . $form_state->getCompleteForm()['video']['#value'] . '<br/>';
+    $message .= 'develop: ' . $form_state->getCompleteForm()['develop']['#value'] . '<br/>';
+    if (!$dev) {
+      $message .= 'description: ' . $form_state->getCompleteForm()['description']['#value'] . '<br/>';
+    }
+    else {
+      $message .= 'destiny: ' . $form_state->getCompleteForm()['destiny']['#value'] . '</div>';
+    }
+    $response = new AjaxResponse();
+    $response->addCommand(new ReplaceCommand('#hey', $message));
+
+    return $response;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    foreach ($form_state->getValues() as $key => $value) {
-      drupal_set_message($key . ': ' . $value);
-    }
-  }
+  public function submitForm(array &$form, FormStateInterface $form_state) {}
 
   /**
    * {@inheritdoc}
