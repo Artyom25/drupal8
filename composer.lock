@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cad0352b82135f6e96c7fe514ffa3419",
-    "content-hash": "4e8f478bfa1412acc060333e425cdb32",
+    "hash": "bb9ae2d2951e379dd279b69bdebab8a6",
+    "content-hash": "ad0a9c74473a12352c9e7db5fbd9b9ca",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -113,6 +113,66 @@
                 "stack"
             ],
             "time": "2016-08-01 12:05:04"
+        },
+        {
+            "name": "cebe/markdown",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cebe/markdown.git",
+                "reference": "f681fee8303310415b746f3758eeda0a7ad08bda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/f681fee8303310415b746f3758eeda0a7ad08bda",
+                "reference": "f681fee8303310415b746f3758eeda0a7ad08bda",
+                "shasum": ""
+            },
+            "require": {
+                "lib-pcre": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "cebe/indent": "*",
+                "facebook/xhprof": "*@dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "bin": [
+                "bin/markdown"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "cebe\\markdown\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc",
+                    "homepage": "http://cebe.cc/",
+                    "role": "Creator"
+                }
+            ],
+            "description": "A super fast, highly extensible markdown parser for PHP",
+            "homepage": "https://github.com/cebe/markdown#readme",
+            "keywords": [
+                "extensible",
+                "fast",
+                "gfm",
+                "markdown",
+                "markdown-extra"
+            ],
+            "time": "2015-03-06 05:21:16"
         },
         {
             "name": "composer/installers",
@@ -1722,6 +1782,102 @@
             "time": "2017-03-02 15:41:26"
         },
         {
+            "name": "drupal/drupalmoduleupgrader",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/drupalmoduleupgrader",
+                "reference": "aa9d189f61c6565099396924df965968ce2e75b4"
+            },
+            "require": {
+                "cebe/markdown": "1.0.*@dev",
+                "drupal/core": "~8.0",
+                "grom358/pharborist": "dev-master",
+                "symfony/filesystem": "^2.6.0",
+                "symfony/finder": "^2.6.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.5",
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2+8-dev",
+                    "datestamp": "1457451539"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\drupalmoduleupgrader\\": "src/"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Gábor Hojtsy",
+                    "homepage": "https://www.drupal.org/user/4166"
+                },
+                {
+                    "name": "Wim Leers",
+                    "homepage": "https://www.drupal.org/user/99777"
+                },
+                {
+                    "name": "dstol",
+                    "homepage": "https://www.drupal.org/user/329570"
+                },
+                {
+                    "name": "eshta",
+                    "homepage": "https://www.drupal.org/user/1951462"
+                },
+                {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "pfrenssen",
+                    "homepage": "https://www.drupal.org/user/382067"
+                },
+                {
+                    "name": "phenaproxima",
+                    "homepage": "https://www.drupal.org/user/205645"
+                },
+                {
+                    "name": "tim.plunkett",
+                    "homepage": "https://www.drupal.org/user/241634"
+                },
+                {
+                    "name": "webchick",
+                    "homepage": "https://www.drupal.org/user/24967"
+                },
+                {
+                    "name": "xjm",
+                    "homepage": "https://www.drupal.org/user/65776"
+                }
+            ],
+            "description": "A Drush command to update Drupal 7 modules to Drupal 8.",
+            "homepage": "https://www.drupal.org/project/drupalmoduleupgrader",
+            "keywords": [
+                "Drupal",
+                "PHP_CodeSniffer",
+                "phpcs",
+                "standards",
+                "update",
+                "upgrade"
+            ],
+            "support": {
+                "source": "https://drupal.org/project/drupalmoduleupgrader",
+                "issues": "https://drupal.org/project/issues/drupalmoduleupgrader"
+            },
+            "time": "2016-03-08 15:38:15"
+        },
+        {
             "name": "drupal/layout_plugin",
             "version": "dev-1.x",
             "source": {
@@ -2213,6 +2369,51 @@
                 "orm"
             ],
             "time": "2016-10-03 21:25:17"
+        },
+        {
+            "name": "grom358/pharborist",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/grom358/pharborist.git",
+                "reference": "0db9e51299a80e95b06857ed1809f59bbbab1af6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/grom358/pharborist/zipball/0db9e51299a80e95b06857ed1809f59bbbab1af6",
+                "reference": "0db9e51299a80e95b06857ed1809f59bbbab1af6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "phpdocumentor/reflection-docblock": "2.0.*"
+            },
+            "require-dev": {
+                "apigen/apigen": "2.8.*",
+                "phpunit/phpunit": "4.2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pharborist\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Cameron Zemek",
+                    "role": "lead"
+                }
+            ],
+            "description": "Pharborist builds a syntax tree for PHP that can be traversed and manipulated.",
+            "keywords": [
+                "standards",
+                "syntax"
+            ],
+            "time": "2015-09-20 22:14:29"
         },
         {
             "name": "guzzlehttp/guzzle",
