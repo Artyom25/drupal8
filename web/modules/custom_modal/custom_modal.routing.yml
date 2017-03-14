@@ -1,0 +1,15 @@
+custom_modal.page:
+  path: 'modaltest'
+  defaults:
+    _title: 'Custom Modal'
+    _controller: '\Drupal\custom_modal\Controller\CustomModalController::page'
+  requirements:
+    _permission: 'access content'
+custom_modal.modal:
+  path: 'modaltest/modal/{js}'
+  defaults:
+    _title: 'Modal window'
+    _controller: '\Drupal\custom_modal\Controller\CustomModalController::modal'
+  requirements:
+    _permission: 'access content'
+    js: 'nojs|ajax'
