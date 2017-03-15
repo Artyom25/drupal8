@@ -13,3 +13,17 @@ custom_modal.modal:
   requirements:
     _permission: 'access content'
     js: 'nojs|ajax'
+custom_modal.form:
+  path: 'modaltest/form'
+  defaults:
+    _form: 'Drupal\custom_modal\Form\ModalForm'
+    _title: 'Form to launch modal form'
+  requirements:
+    _permission: 'access content'
+custom_modal.modal_form:
+  path: 'modaltest/form/modal'
+  defaults:
+    _title: 'Modal form'
+    _controller: '\Drupal\custom_modal\Controller\ModalFormController::openModalForm'
+  requirements:
+    _permission: 'access content'
