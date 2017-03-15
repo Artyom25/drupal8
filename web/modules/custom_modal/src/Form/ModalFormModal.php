@@ -6,11 +6,14 @@
 
 namespace Drupal\custom_modal\Form;
 
+use Drupal\Core\Ajax\RedirectCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\OpenModalDialogCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Ajax\PrependCommand;
+use Drupal\Core\Url;
 
 /**
  * Modal form class.
@@ -74,6 +77,8 @@ class ModalFormModal extends FormBase {
     // if there are any form errors, re-display the form.
     if ($form_state->hasAnyErrors()) {
       $response->addCommand(new ReplaceCommand('#modal_example_form', $form));
+      drupal_get_messages();
+      $response->addCommand(new PrependCommand('#modal_example_form', '<p style="color:red">Yo, dog, you must answer yes or not.</p>'));
     }
     else {
       $response->addCommand(
@@ -83,6 +88,7 @@ class ModalFormModal extends FormBase {
           ['width' => 800]
         )
       );
+      $response->addCommand(new RedirectCommand(Url::fromRoute('custom_modal.form')->toString()));
     }
 
     return $response;
