@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6d5f0c8c7b7693a817dcf8b2620b72ac",
-    "content-hash": "80ea181917c4401783f4270a68d5f168",
+    "hash": "c73f6953a47cdb156535d13fa8103588",
+    "content-hash": "5553aca5b44659a958ed281a9b98c822",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1202,7 +1202,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/adminimal_admin_toolbar-8.x-1.3.zip",
-                "reference": null,
+                "reference": "8.x-1.3",
                 "shasum": "6e2b1fc80fece1f68895269713d5aa7e1cb220a5"
             },
             "require": {
@@ -1234,6 +1234,52 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/adminimal_admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/adminimal_admin_toolbar"
+            }
+        },
+        {
+            "name": "drupal/adminimal_theme",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/adminimal_theme",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/adminimal_theme-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "bb9f280bcdbd7e4d384a925c685a2aa1feed8419"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1480507083"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "ANDiTKO",
+                    "homepage": "https://www.drupal.org/user/1428124"
+                },
+                {
+                    "name": "realityloop",
+                    "homepage": "https://www.drupal.org/user/139189"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/adminimal_theme",
+            "support": {
+                "source": "http://cgit.drupalcode.org/adminimal_theme"
             }
         },
         {
@@ -1973,6 +2019,59 @@
             "time": "2016-03-08 15:38:15"
         },
         {
+            "name": "drupal/l10n_client",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/l10n_client",
+                "reference": "9bf8d597732870bdca301512c71b6e5d74d48db2"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "require-dev": {
+                "drupal/l10n_client_contributor": "*",
+                "drupal/xmlrpc": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1+13-dev",
+                    "datestamp": "1477566841"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Gábor Hojtsy",
+                    "homepage": "https://www.drupal.org/user/4166"
+                },
+                {
+                    "name": "Jose Reyero",
+                    "homepage": "https://www.drupal.org/user/4299"
+                },
+                {
+                    "name": "SebCorbin",
+                    "homepage": "https://www.drupal.org/user/412171"
+                },
+                {
+                    "name": "yhahn",
+                    "homepage": "https://www.drupal.org/user/264833"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/l10n_client",
+            "support": {
+                "source": "http://cgit.drupalcode.org/l10n_client"
+            },
+            "time": "2017-01-28 09:19:31"
+        },
+        {
             "name": "drupal/layout_plugin",
             "version": "dev-1.x",
             "source": {
@@ -2204,6 +2303,44 @@
                 "irc": "irc://irc.freenode.org/drupal-scotch"
             },
             "time": "2017-02-25 20:59:09"
+        },
+        {
+            "name": "drupal/xmlrpc",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/xmlrpc",
+                "reference": "c4571496ab780e8abe6a412bcff4bd21a671be46"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1+0-dev",
+                    "datestamp": "1449437639"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "fgm",
+                    "homepage": "https://www.drupal.org/user/27985"
+                }
+            ],
+            "description": "Provides XML-RPC functionality.",
+            "homepage": "https://www.drupal.org/project/xmlrpc",
+            "support": {
+                "source": "http://cgit.drupalcode.org/xmlrpc"
+            },
+            "time": "2015-12-06 21:28:15"
         },
         {
             "name": "drush/drush",
@@ -5551,52 +5688,6 @@
             "time": "2015-06-14 21:17:01"
         },
         {
-            "name": "drupal/adminimal_theme",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/adminimal_theme",
-                "reference": "8.x-1.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/adminimal_theme-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "bb9f280bcdbd7e4d384a925c685a2aa1feed8419"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-theme",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1480507083"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "ANDiTKO",
-                    "homepage": "https://www.drupal.org/user/1428124"
-                },
-                {
-                    "name": "realityloop",
-                    "homepage": "https://www.drupal.org/user/139189"
-                }
-            ],
-            "homepage": "https://www.drupal.org/project/adminimal_theme",
-            "support": {
-                "source": "http://cgit.drupalcode.org/adminimal_theme"
-            }
-        },
-        {
             "name": "fabpot/goutte",
             "version": "v3.2.1",
             "source": {
@@ -6682,7 +6773,9 @@
         "drupal/devel": 20,
         "drupal/page_manager": 20,
         "drupal/layout_plugin": 20,
-        "drupal/panels": 20
+        "drupal/panels": 20,
+        "drupal/l10n_client": 20,
+        "drupal/xmlrpc": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

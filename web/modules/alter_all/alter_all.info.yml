@@ -1,0 +1,5 @@
+name: Alterator
+type: module
+description: 'alters all we could find'
+package: Custom
+core: 8.x
